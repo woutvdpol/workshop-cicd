@@ -18,7 +18,7 @@ pipeline {
                 docker { image 'node:alpine' }
             }
             steps {
-                dir('core/backend'){
+                dir('code/backend'){
                     sh 'npm run build'
                 }   
             }

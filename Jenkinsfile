@@ -8,7 +8,9 @@ pipeline {
                 docker { image 'node:alpine' }
             }
             steps {
-                sh 'docker-compose -f docker-compose.yml build'
+                dir('code/frontend'){
+                    echo 'hello world'
+                }
             }
         }
         stage('Build') {

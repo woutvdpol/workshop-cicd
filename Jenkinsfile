@@ -9,7 +9,7 @@ pipeline {
             }
             steps {
                 dir('code/frontend'){
-                    echo 'hello world'
+                    sh 'npm install'
                 }
             }
         }
@@ -18,7 +18,9 @@ pipeline {
                 docker { image 'node:alpine' }
             }
             steps {
-                echo 'Build'      
+                dir('core/frontend'){
+                    sh 'npm run build'
+                }   
             }
         }
         stage('Static Analysis') {

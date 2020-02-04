@@ -8,7 +8,7 @@ pipeline {
                 docker { image 'node:alpine' }
             }
             steps {
-                echo 'Prepare'
+                sh 'docker-compose -f docker-compose.yml build'
             }
         }
         stage('Build') {
